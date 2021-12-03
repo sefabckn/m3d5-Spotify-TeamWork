@@ -1,0 +1,136 @@
+body {
+    font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+
+  button {
+    border-radius: 3rem;
+  }
+  
+  .spotyfy-img {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #continue-message{
+      padding-left: 175px; 
+  }
+
+  .facebook-btn {
+    border-radius: 2rem;
+    font-size: small;
+    background-color: #3b5998;
+    border-color: #3b5998;
+    color: white;
+    font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 32px;
+    width: 480px;
+    height: 48px;
+  }
+
+  .apple-btn {
+    border-radius: 2rem;
+    font-size: small;
+    background-color: #000;
+    font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 32px;
+    width: 480px;
+    height: 48px;
+  }
+
+  .google-btn{
+    border-radius: 2rem;
+    border: 2px solid #7d7f82;
+    font-size: small;
+    background-color: #ffffff;
+    font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 32px;
+    width: 480px;
+    height: 48px;
+  }
+  #or-part{
+      padding-left: 430px;
+  }
+
+  #or-part div:nth-of-type(2){
+      padding-left: 25px;
+  }
+
+  .email-placeholder {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    text-align: center;
+    font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    width: 500px;
+    height: 48px;
+    margin-left: 545px;
+  }
+
+  #forget-pass{
+      color: #7d7f82;
+      padding-left: 70px;
+  }
+
+.form-check{
+  margin-left: 560px;
+}
+
+.login-button{
+    margin-left: 450px;
+    width: 200px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+.btn-color1 {
+  background-color: #15883e;
+  color: rgb(255, 251, 255);
+}
+
+.btn-color1:hover {
+  background-color: rgb(68, 156, 99);
+  color: rgb(255, 251, 255);
+}
+
+.form-check-input {
+  background-color: rgb(33, 187, 33) !important;
+  border-color: rgb(33, 187, 33) !important;
+  font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+  .signup-btn {
+    border-color: rgb(114, 112, 112);
+    border-radius: 2rem;
+    color: rgb(114, 112, 112);
+    font-family: Circular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    border-width: 0.4ex;
+    width: 400px;
+    height: 48px;
+    margin-left: 32px;
+  }
+
+.signup-btn:hover {
+  background-color: rgb(114, 112, 112);
+}
+
+  #no-account{
+      margin-left: 55px;
+  }
+
+  .login-button .btn-color1 a{
+    text-decoration: none;
+    color: rgb(219, 217, 213);
+  }
+
+  .btn-success{
+    width: 190px;
+    height: 50px;
+    border-radius: 30px
+  }
