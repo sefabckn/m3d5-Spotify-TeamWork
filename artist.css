@@ -439,7 +439,6 @@ footer #myProgressBar .icons {
   min-height: 45vh;
 
   position: relative;
-  background-image: url("assets/artisPageBackground.jpg");
   align-items: stretch;
   flex-direction: row;
 

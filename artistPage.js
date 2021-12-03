@@ -8,12 +8,8 @@ const profile = (query) => {
       const h1 = document.getElementById("header-head");
       h1.innerHTML = data.name;
 
-      const imgContainer = document.getElementById("img-js");
-      imgContainer.src = data.picture_xl;
-      imgContainer.style.objectFit = "cover";
-
-      /* style =
-        "object-fit: cover; width: 100%; object-position: 0% 0%; height: 100%;"; */
+      const imgContainer = document.getElementById("backgroundImage");
+      imgContainer.style.backgroundImage = `url(${data.picture_xl})`;
     })
     .catch((err) => console.log(err));
 };
@@ -63,10 +59,10 @@ const getSongs = (query) => {
 };
 
 window.onload = () => {
+  let searchParams = new URLSearchParams(window.location.search);
+  let id = searchParams.get("songId");
+  console.log(data);
+
   profile("412");
   getSongs("412");
-
-  /* let searchParams = new URLSearchParams(window.location.search);
-  let id = searchParams.get("songId");
-  console.log(data); */
 };
