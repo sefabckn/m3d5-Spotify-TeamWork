@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="album.css">
+    <style>
+      .card-text {
+      font-size: 13px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(90, 90, 90, 0.5);
+      color: white;
+    }
+    </style>
 
     <title>Spotify</title>
 </head>
@@ -30,10 +44,10 @@
               <a href="homepage.html"><p>Home</p></a>
             </a>
           </div>
-          <div class="links-nav">
+          <div class="links-nav" onclick="showSearch()">
             <a href="#">
                <img src="assets/search.png" width="24px" height="24px" alt="...">
-               <a href="search.html"><p>Search</p></a>
+               <p>Search</p>
             </a>
           </div>
           <div id="yourLibrary" class="links-nav">
@@ -114,20 +128,25 @@
          <nav id="horizontal-nav" class="navbar navbar-expand-lg sticky-top" onscroll="showMenu()">
             <a href="#" id="lessThan" class="previous round ml-3">&#8249;</a>
             <a href="#" id="greaterThan" class="next round">&#8250;</a>
+
+            <form><input type="text" class="form-control ml-3 d-none" oninput="searchFeature(event)" style="min-width: 300px; border-radius: 50px;" placeholder="Artists, songs or podcasts"></form>
+
             <div class="dropdown">
-              <button class="btn btn-user btn-sm dropdown-toggle justify-content-end mt-2" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
+              <button class="btn btn-user btn-sm dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
               style="border-radius: 2rem;"
                data-bs-toggle="dropdown" aria-expanded="false">
                <img src="covers/Recently-played/le-bask.jpg" height="30px" alt=""style="border-radius: 2rem;">
-               <span>Wizards Without a Wand</span> 
+               <span>Username</span> 
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Account</a></li>
                 <li><a class="dropdown-item" href="#">Profile</a></li>
                 <li><a class="dropdown-item" href="#">Log out</a></li>
               </ul>
             </div>
           </nav> 
+
+        <div class="main-section">
         <div class="row ml-3 album-jumbotron">
           <!-- <div class="input-group">
             <div class="col-lg-2 col-sm-6 mt-2">
@@ -206,6 +225,10 @@
               </div>
           </div>
        </div>
+
+      </div>
+
+
     </div> 
   </div>   
 </div>
@@ -298,11 +321,11 @@
         loadContent(123243);
       }
 
-      const loadContent = (query) => {
-        return fetch ("https://striveschool-api.herokuapp.com/api/deezer/album/" + query)
+      const loadContent = (id) => {
+        return fetch ("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
         .then(response => response.json())
         .then(content => {
-          console.log(content)
+          /* console.log(content) */
           const jumbotron = document.querySelector(".album-jumbotron")
           const albumInfo = document.createElement("div")
           albumInfo.classList.add("input-group")
@@ -330,8 +353,9 @@
             let trackInfoDiv = document.querySelector(".tracks-info")
             let trackInfo = document.createElement("div")
             trackInfo.classList.add("mb-3", "ml-3", "pb-4")
+            let trackNum = content.tracks.data.indexOf(track)
             trackInfo.innerHTML = `
-            ${track.rank + 1} <span class="ml-4"><strong>${track.title}</strong><br><span class="singer-name">${track.artist.name}</span></span>`
+            ${trackNum + 1} <span class="ml-4"><strong>${track.title}</strong><br><span class="singer-name">${track.artist.name}</span></span>`
             trackInfoDiv.appendChild(trackInfo)
 
             let trackDurDiv = document.querySelector(".duration")
@@ -343,6 +367,45 @@
 
         })
         .catch(err => console.error(err))
+      }
+
+      const showSearch = () => {
+        let searchBar = document.querySelector(".form-control")
+        searchBar.classList.toggle("d-none")
+        searchBar.classList.toggle("show")
+      }
+
+      const searchFeature = (event) => {
+        const searchQuery = event.target.value
+        console.log(searchQuery)
+
+        return fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + searchQuery)
+        .then(response => response.json())
+        .then(searchData => {
+          /* console.log(searchData.data) */
+          const resultsArea = document.querySelector(".main-section")
+          resultsArea.classList.add("row", "justify-content-between")
+          resultsArea.innerHTML = ""
+          /* const filteredResult = searchData.data.filter((search) => search.artist.name.toLowerCase().includes(searchQuery.toLowerCase())) */
+          
+          searchData.data.forEach(search => {
+            console.log(search)
+            const card = document.createElement("div")
+            card.classList.add("card", "col-sm-6", "col-md-4", "col-lg-2", "mx-2", "my-2")
+            card.innerHTML = `
+                <img src=${search.album.cover} class="card-img-top pt-3" alt="cover">
+                <div class="card-body mx-n3">
+                  <div class="card-text mt-n2 my-n3">
+                    <h6>${search.album.title}</h6>
+                    <p>${search.artist.name}</p>
+                </div>
+              </div>`
+            resultsArea.appendChild(card)
+          })
+
+        })
+
+        .catch(err => console.log(err))
       }
      
       </script>
