@@ -132,10 +132,9 @@
     
       <div class="row">
         <h1>Good Morning</h1>
-        <button class='btn btn-primary align-center bg-dark border-dark ml-2 mb-2' id="album-loader"  style="width:120px; height: 60px;" >Display albums</button>
       </div>
       
-      <div class="row">
+      <div class="row" id='good-morning-row'>
           <div class="box col-md-2 col-sm-6">
           <div class="box_image"><img src="covers/burning-jazz-rock.jpg" alt="..."></div>
           <div class="box_title">Burning-jazz-rock</div>
@@ -197,7 +196,7 @@
       <div class="row headline__section">
           <div class="col-12 mt-5">
             <h3>Shows to try</h3>
-            <button class='btn btn-primary align-center bg-dark border-dark ml-2 mb-2' id="album-loader2"  style="width:120px; height: 60px;" >Display albums</button>
+            
           </div>
          <div class="col-12 mr-5">
           
@@ -211,7 +210,7 @@
      <div class="row headline__section">
        <div class="col-12 mt-5">
          <h3>The Best of 2020</h3>
-         <button class='btn btn-primary align-center bg-dark border-dark ml-2 mb-2' id="album-loader2"  style="width:120px; height: 60px;" >Display albums</button>
+         
        </div>
      </div>
      <div class="row" id = "best-of-2020">
@@ -280,6 +279,7 @@
 
 
     <script>
+      //Music Player Section 
       let playStatus= false;
       let intervalId = window.setInterval(function(){
         let currentTime = document.getElementById("newSong").currentTime;
