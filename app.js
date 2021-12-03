@@ -1,7 +1,7 @@
 album = []
 
 const albumList = () => {
-        fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem", {
+        fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem&limit=10", {
         "method": "GET",
     })
     .then(response => response.json())
@@ -33,7 +33,7 @@ const albumList = () => {
 }
 
 window.onload = () => {
-    document.querySelector("#album-loader").addEventListener("click", albumList)
+    albumList()
     
 
 }
