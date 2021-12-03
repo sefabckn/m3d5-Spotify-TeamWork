@@ -171,7 +171,7 @@
 
             <div class=" row-fluid">
               <div class="col-12">
-                <img id="" class="" src="" />
+                <img id="img-js" class="" src="" />
 
               </div>
               <div class="col-4">
@@ -183,7 +183,7 @@
                       d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
                   </svg>
                   <small>Verified Artist</small>
-                  
+
                 </h6>
                 <h1 id="header-head">Queen</h1>
                 <h6 id="small-text">37,258,456 montly listeners</h6>
@@ -219,89 +219,11 @@
               <h5>Artist Pick</h5>
             </div>
           </div>
-          <div class="row">
+          <div id="main-song-wrapper" class="row">
             <div class="col-8">
-              <div class="row artist-song1">
-                <div class="col-1 py-4"> <i id="play-icon2" class="fas fa-play d-none"></i><span class="row-number">1</span></div>
-                <div class="col-6 py-3">
-                  <img src="covers/Recently-played/power-pizza.jpg" alt="" height="40px" />
-                  <small>
-                    <strong>
-                      Another one Bites The Dust - Remastered 2011</strong></small>
-                </div>
-                <div class="col-4 py-4">
-                  <small>1,013,213,772</small>
-                </div>
-                <div class="col-1 py-4">
-                  <small> 3:34</small>
-                </div>
-              </div>
 
 
-              <div class="row artist-song1">
-                <div class="col-1 py-4"><i id="play-icon2" class="fas fa-play d-none"></i><span class="row-number">2</span></div>
-                <div class="col-6 py-3">
-                  <img src="covers/Recently-played/metal-ballads.jpg" alt="" height="40px" />
-                  <small>
-                    <strong>
-                      Another one Bites The Dust - Remastered 2011</strong></small>
-                </div>
-                <div class="col-4 py-4">
-                  <small>1,013,213,772</small>
-                </div>
-                <div class="col-1 py-4">
-                  <small> 3:34</small>
-                </div>
-              </div>
-
-              <div class="row artist-song1">
-                <div class="col-1 py-4"><i id="play-icon2" class="fas fa-play d-none"></i><span class="row-number">3</span></div>
-                <div class="col-6 py-3">
-                  <img src="covers/Recently-played/il.jpeg" alt="" height="40px" />
-                  <small>
-                    <strong>
-                      Another one Bites The Dust - Remastered 2011</strong></small>
-                </div>
-                <div class="col-4 py-4">
-                  <small>1,013,213,772</small>
-                </div>
-                <div class="col-1 py-4">
-                  <small> 3:34</small>
-                </div>
-              </div>
-              <div class="row artist-song1">
-                <div class="col-1 py-4"><i id="play-icon2" class="fas fa-play d-none"></i><span class="row-number">4</span></div>
-                <div class="col-6 py-3">
-                  <img src="covers/Recently-played/qdss.jpg" alt="" height="40px" />
-                  <small>
-                    <strong>
-                      Another one Bites The Dust - Remastered 2011</strong></small>
-                </div>
-                <div class="col-4 py-4">
-                  <small>1,013,213,772</small>
-                </div>
-                <div class="col-1 py-4">
-                  <small> 3:34</small>
-                </div>
-              </div>
-
-              <div class="row artist-song1">
-                <div class="col-1 py-4"><i id="play-icon2" class="fas fa-play d-none"></i><span class="row-number">5</span></div>
-                <div class="col-6 py-3">
-                  <img src="covers/Recently-played/locanda.jpg" alt="" height="40px" />
-                  <small>
-                    <strong>
-                      Another one Bites The Dust - Remastered 2011</strong></small>
-                </div>
-                <div class="col-4 py-4">
-                  <small>1,013,213,772</small>
-                </div>
-                <div class="col-1 py-4">
-                  <small> 3:34</small>
-                </div>
-              </div>
-
-              <div class="row">
+              <div id="insert-before" class="row">
                 <div class="col-3 mb-2">
                   <a id="see-more" href="#"><small> <strong> SEE MORE</strong></small></a>
                 </div>
@@ -485,16 +407,16 @@
       document.getElementById("heart-empty").classList.toggle('fill-heart');
       let div = document.createElement('div')
       div.className = "links-small-nav";
-      
+
       let a = document.createElement('a')
       a.href = "#";
-      
+
       let p = document.createElement('p')
       p.innerText = "new song";
 
       a.appendChild(p);
       div.appendChild(a);
-      
+
       let parent = document.getElementById("scrollbar-space");
       parent.insertBefore(div, parent.firstChild);
     }
@@ -506,7 +428,7 @@
 
 
   </script>
-
+  <script src="artistPage.js"></script>
   <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
