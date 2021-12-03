@@ -230,6 +230,7 @@ margin-right: 13px;
 
 .card:hover{
     background-color: rgba(20, 19, 19, 0.418);
+    cursor:pointer;
 }
 
 .card .card__body .card__meta {
