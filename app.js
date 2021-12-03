@@ -1,8 +1,8 @@
 
 window.onload = () => {
-    loadAlbums('50cent', '#recently-played')
-    loadAlbums('queen', "#best-of-2020")
-    loadAlbums('eminem', "#shows-to-try")
+    loadAlbums('pink floyd', '#recently-played')
+    loadAlbums('slipknot', "#best-of-2020")
+    loadAlbums('slayer', "#shows-to-try")
 }
 
 const loadAlbums = (query, queryselector) => {
@@ -24,11 +24,12 @@ const loadAlbums = (query, queryselector) => {
                 const title = result.title_short;
                 const cover = result.album.cover_medium;
                 const id = result.album.id;
+                const link = result.artist.link
                 let row = document.querySelector(queryselector)
                 let col = document.createElement('div')
                 col.className = 'card col-sm-6 col-md-2 px-2 py-2'
                 col.innerHTML +=
-                ` <img class="card__image" src="${cover}" />
+                ` <img class="card__image" src="${cover}"  onclick ="window.location.assign('./album.html?albumId='+ ${id})"/>
                 <div class="card__body">
                 <div class="card__meta">
                     <p><strong>${title}</strong><span><br>${id}</span></p>
@@ -60,4 +61,13 @@ const loadAlbums = (query, queryselector) => {
             })
         }) */
     })
+}
+const goToAlbumPage =(loadAlbums, event)=>{
+    let cardGrabber = document.querySelector('.card')
+    cardGrabber.addEventListener(click, (event) =>{
+        let searchParams = new URLSearchParams(window.location.search)
+        loadAlbums()
+        window.location.assign(picture.photographer_url)
+    })
+
 }
