@@ -5,7 +5,7 @@ window.onload = () => {
     loadAlbums('slayer', "#shows-to-try")
 }
 
-const loadAlbums = (query, queryselector) => {
+const loadAlbums = (query, querySelector) => {
         fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query, {
         "method": "GET",
     })
@@ -25,7 +25,7 @@ const loadAlbums = (query, queryselector) => {
                 const cover = result.album.cover_medium;
                 const id = result.album.id;
                 const link = result.artist.link
-                let row = document.querySelector(queryselector)
+                let row = document.querySelector(querySelector)
                 let col = document.createElement('div')
                 col.className = 'card col-sm-6 col-md-2 px-2 py-2'
                 col.innerHTML +=

@@ -318,8 +318,11 @@
 
       
       window.onload = () => {
-        loadContent(123243);
+        let params = new URLSearchParams(document.location.search);
+        let id = params.get("albumId");
+        loadContent(id);
       }
+
 
       const loadContent = (id) => {
         return fetch ("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
