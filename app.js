@@ -29,7 +29,7 @@ const loadAlbums = (query, querySelector) => {
                 let col = document.createElement('div')
                 col.className = 'card col-sm-6 col-md-2 px-2 py-2'
                 col.innerHTML +=
-                ` <img class="card__image" src="${cover}"  onclick ="window.location.assign('./album.html?albumId='+ ${id})"/>
+                ` <img class="card__image" src="${cover}" onclick ="window.location.assign('./album.html?id='+ ${id})"/>
                 <div class="card__body">
                 <div class="card__meta">
                     <p><strong>${title}</strong><span><br>${id}</span></p>
