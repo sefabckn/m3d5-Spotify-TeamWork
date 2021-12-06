@@ -434,6 +434,7 @@ footer #myProgressBar .icons {
   background-repeat: no-repeat;
   position: relative;
 }
+
 #backgroundImage {
   display: flex;
   min-height: 45vh;
@@ -445,6 +446,7 @@ footer #myProgressBar .icons {
   background-position: center;
   background-size: cover;
 }
+
 #header-head {
   margin-bottom: -34vh;
   position: absolute;

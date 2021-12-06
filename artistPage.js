@@ -36,7 +36,7 @@ const getSongs = (query) => {
       <div class="col-1 py-4"> <i id="play-icon2" class="fas fa-play d-none"></i><span
       class="row-number">${i + 1}</span></div>
         <div class="col-6 py-3">
-        <img src=${artistDetails.album.cover_medium} alt="${
+        <img src=${artistDetails.album.cover_big} alt="${
           artistDetails.title
         }" height="40px" />
         <small> ${artistDetails.title_short}
@@ -47,7 +47,11 @@ const getSongs = (query) => {
         <small>${artistDetails.id}</small>
         </div>
         <div class="col-1 py-4">
-        <small>${artistDetails.duration}</small>
+        <small>${("0" + Math.floor(artistDetails.duration / 60)).slice(
+          -2
+        )} : ${("0" + Math.floor(artistDetails.duration % 60)).slice(
+          -2
+        )}</small>
         </div>
         </div>`;
         const parent = document.getElementById("insert-before").parentNode;
@@ -59,9 +63,9 @@ const getSongs = (query) => {
 };
 
 window.onload = () => {
-  let searchParams = new URLSearchParams(window.location.search);
-  let id = searchParams.get("songId");
-  console.log(data);
+  /* let searchParams = new URLSearchParams(window.location.search);
+  let id = searchParams.get("data.id");
+  console.log(data); */
 
   profile("412");
   getSongs("412");
